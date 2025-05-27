@@ -31,6 +31,7 @@ body {
 img {
   max-width: 100%;    /* Imagem responsiva, não ultrapassa o container */
   display: block;     /* Remove espaços em branco abaixo da imagem */
+  height: auto;       /* Mantém a proporção ajustando a altura */
 }
 
 /* Container padrão para centralizar conteúdo */
@@ -56,11 +57,14 @@ img {
   padding: 0.75rem 1.5rem;            /* Espaçamento interno do botão */
   background-color: var(--primary-color); /* Cor de fundo principal */
   color: #fff;                        /* Texto branco para contraste */
-  border: none;                      /* Sem borda */
+  border: none;                       /* Sem borda */
   border-radius: 8px;                 /* Cantos levemente arredondados */
-  text-decoration: none;             /* Remove sublinhado de links */
-  font-weight: 600;                  /* Texto semi-negrito para destaque */
-  transition: var(--transition);    /* Transição suave para hover */
+  text-decoration: none;              /* Remove sublinhado de links */
+  font-weight: 600;                   /* Texto semi-negrito para destaque */
+  font-size: 1rem;                    /* Tamanho da fonte base */
+  transition: var(--transition);      /* Transição suave para hover */
+  width: auto;                        /* Evita que o botão estique demais */
+  text-align: center;                 /* Centraliza o texto */
 }
 
 /* Hover do botão: troca para cor de destaque */
@@ -84,19 +88,20 @@ img {
 /* Navbar principal */
 .navbar {
   display: flex;                        /* Layout flexível para alinhamento */
-  justify-content: space-between;      /* Espaça logo e links */
+  justify-content: space-between;       /* Espaça logo e links */
   align-items: center;                  /* Alinha verticalmente ao centro */
   padding: 1rem 2rem;                   /* Espaçamento interno */
-  background-color: var(--card-bg);    /* Fundo branco */
+  background-color: var(--card-bg);     /* Fundo branco */
   position: static;                     /* Posição padrão */
-  top: 0;                              /* Fica no topo */
-  z-index: 999;                        /* Fica acima de outros elementos */
-  box-shadow: var(--shadow);           /* Sombra suave para destaque */
+  top: 0;                               /* Fica no topo */
+  z-index: 999;                         /* Fica acima de outros elementos */
+  box-shadow: var(--shadow);            /* Sombra suave para destaque */
 }
 
 /* Logo da navbar */
 .logo-img {
   height: 60px; /* Altura fixa para consistência */
+  max-width: 100%; /* Garante que não ultrapasse o container */
 }
 
 /* Lista de links da navbar */
@@ -127,6 +132,7 @@ img {
   background: none;   /* Fundo transparente */
   border: none;       /* Sem borda */
   cursor: pointer;    /* Cursor de clique */
+  padding: 0.5rem;    /* Espaçamento interno para facilitar clique */
 }
 
 /* Seção Hero - destaque principal */
@@ -152,10 +158,10 @@ img {
 /* Foto do perfil */
 .profile-photo {
   border-radius: 10%;           /* Cantos arredondados em 10% */
-  width: 365px;                 /* Largura fixa */
-  height: 465px;                /* Altura fixa */
+  max-width: 100%;              /* Responsiva, não ultrapassa o container */
+  height: auto;                 /* Ajusta a altura proporcionalmente */
   object-fit: cover;            /* Ajusta imagem para cobrir espaço */
-  border: 6px;                  /* Valor incompleto, talvez faltou cor */
+  border: 6px solid transparent; /* Corrige o border que estava incompleto */
   transition: var(--transition); /* Transição suave */
 }
 
@@ -262,9 +268,10 @@ section h2 {
 
 /* Imagem do projeto */
 .project-image {
-  width: 100%;               /* Largura total do container */
-  height: auto;              /* Altura automática para manter proporção */
+  max-width: 100%;           /* Responsiva, não ultrapassa o container */
+  height: auto;              /* Ajusta a altura proporcionalmente */
   border-radius: var(--border-radius); /* Cantos arredondados */
+  object-fit: cover;         /* Ajusta a imagem para cobrir o espaço */
 }
 
 /* Informações do projeto */
@@ -288,6 +295,7 @@ section h2 {
   display: flex;             /* Flex para alinhamento */
   gap: 1rem;                 /* Espaço entre botões */
   margin-top: 1rem;          /* Espaço acima */
+  flex-wrap: wrap;           /* Permite quebra de linha em telas pequenas */
 }
 
 /* Tecnologias usadas no projeto */
@@ -349,7 +357,52 @@ footer {
   transform: translateY(0); /* Retorna à posição original */
 }
 
-/* Responsividade para telas menores que 768px */
+/* Responsividade para diferentes tamanhos de tela */
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .profile-photo {
+    max-width: 300px;         /* Reduz o tamanho da foto de perfil */
+    height: auto;             /* Ajusta a altura proporcionalmente */
+  }
+
+  .project-image {
+    max-height: 200px;        /* Limita a altura das imagens dos projetos */
+  }
+
+  .logo-img {
+    height: 50px;             /* Reduz o tamanho do logo */
+  }
+
+  .button, .button.outline {
+    padding: 0.65rem 1.3rem;    /* Reduz padding para telas menores */
+    font-size: 0.95rem;         /* Reduz tamanho da fonte */
+  }
+
+  .project-buttons {
+    gap: 0.8rem;                /* Reduz o espaço entre botões */
+  }
+
+  .nav-links {
+    gap: 4rem;                  /* Reduz o espaço entre links da navbar */
+  }
+
+  .nav-link {
+    font-size: 18px;            /* Reduz o tamanho da fonte dos links */
+  }
+
+  .back-to-top {
+    padding: 0.65rem;           /* Reduz o padding do botão */
+    font-size: 1.1rem;          /* Reduz o tamanho do ícone */
+  }
+
+  .contato .button {
+    padding: 0.65rem 1.3rem;    /* Ajusta o botão de contato */
+    font-size: 0.95rem;         /* Reduz o tamanho da fonte */
+  }
+}
+
+/* Telas menores que 768px (mobile) */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column-reverse; /* Conteúdo em coluna invertida */
@@ -361,11 +414,11 @@ footer {
     flex-direction: column;          /* Links em coluna */
     background-color: #fff;          /* Fundo branco */
     border-radius: 12px;             /* Cantos arredondados */
-    font-size: 18px;                  /* Tamanho da fonte*/
+    font-size: 18px;                 /* Tamanho da fonte */
     position: absolute;              /* Posicionado em relação à navbar */
-    right: 1rem;                    /* Distância da direita */
-    top: 60px;                      /* Distância do topo */
-    padding: 1rem;                  /* Espaçamento interno */
+    right: 1rem;                     /* Distância da direita */
+    top: 60px;                       /* Distância do topo */
+    padding: 1rem;                   /* Espaçamento interno */
     box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra leve */
   }
 
@@ -375,5 +428,106 @@ footer {
 
   .nav-toggle {
     display: block;                /* Mostra botão hamburguer */
+    font-size: 1.3rem;             /* Tamanho ajustado do ícone */
+    padding: 0.5rem;               /* Espaçamento interno para facilitar clique */
+  }
+
+  .profile-photo {
+    max-width: 250px;              /* Reduz o tamanho da foto de perfil */
+    height: auto;                  /* Ajusta a altura proporcionalmente */
+  }
+
+  .project-image {
+    max-height: 150px;             /* Reduz a altura das imagens dos projetos */
+  }
+
+  .logo-img {
+    height: 40px;                  /* Reduz o tamanho do logo */
+  }
+
+  .button, .button.outline {
+    padding: 0.5rem 1rem;          /* Reduz padding para telas menores */
+    font-size: 0.9rem;             /* Reduz tamanho da fonte */
+    width: 100%;                   /* Botões ocupam largura total para melhor usabilidade */
+    box-sizing: border-box;        /* Garante que padding não quebre o layout */
+  }
+
+  .project-buttons {
+    flex-direction: column;        /* Botões em coluna para melhor ajuste */
+    gap: 0.5rem;                   /* Reduz o espaço entre botões */
+  }
+
+  .back-to-top {
+    padding: 0.5rem;               /* Reduz o padding do botão */
+    font-size: 1rem;               /* Reduz o tamanho do ícone */
+    bottom: 15px;                  /* Ajusta posição para telas menores */
+    right: 15px;                   /* Ajusta posição para telas menores */
+  }
+
+  .contato .button {
+    padding: 0.5rem 1rem;          /* Ajusta o botão de contato */
+    font-size: 0.9rem;             /* Reduz o tamanho da fonte */
+    width: 100%;                   /* Botão ocupa largura total */
+  }
+
+  .social-icons a {
+    font-size: 2rem;               /* Reduz o tamanho dos ícones sociais */
+  }
+}
+
+/* Telas muito pequenas (max-width: 480px) */
+@media (max-width: 480px) {
+  .profile-photo {
+    max-width: 200px;              /* Reduz ainda mais o tamanho da foto de perfil */
+    height: auto;                  /* Ajusta a altura proporcionalmente */
+  }
+
+  .project-image {
+    max-height: 120px;             /* Reduz ainda mais a altura das imagens dos projetos */
+  }
+
+  .logo-img {
+    height: 35px;                  /* Reduz ainda mais o tamanho do logo */
+  }
+
+  .button, .button.outline {
+    padding: 0.4rem 0.8rem;        /* Reduz ainda mais o padding */
+    font-size: 0.85rem;            /* Reduz mais o tamanho da fonte */
+    width: 100%;                   /* Botões ocupam largura total */
+  }
+
+  .project-buttons {
+    gap: 0.4rem;                   /* Reduz ainda mais o espaço entre botões */
+  }
+
+  .nav-toggle {
+    font-size: 1.2rem;             /* Reduz o tamanho do ícone do menu */
+    padding: 0.4rem;               /* Ajusta o padding */
+  }
+
+  .nav-links {
+    right: 0.5rem;                 /* Ajusta posição do menu */
+    top: 50px;                     /* Ajusta posição do menu */
+    padding: 0.8rem;               /* Reduz o padding */
+  }
+
+  .nav-link {
+    font-size: 16px;               /* Reduz o tamanho da fonte dos links */
+  }
+
+  .back-to-top {
+    padding: 0.4rem;               /* Reduz o padding do botão */
+    font-size: 0.9rem;             /* Reduz o tamanho do ícone */
+    bottom: 10px;                  /* Ajusta posição */
+    right: 10px;                   /* Ajusta posição */
+  }
+
+  .contato .button {
+    padding: 0.4rem 0.8rem;        /* Ajusta o botão de contato */
+    font-size: 0.85rem;            /* Reduz o tamanho da fonte */
+  }
+
+  .social-icons a {
+    font-size: 1.8rem;             /* Reduz ainda mais o tamanho dos ícones sociais */
   }
 }
