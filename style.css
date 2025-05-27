@@ -150,7 +150,7 @@ img {
 
 /* Container da imagem do Hero */
 .hero-img {
-  flex: 1 1 40%;            /* Ocupa 40% do espaço */
+  flex: 1 1 10%;            /* Ocupa 40% do espaço */
   display: flex;            /* Flex para centralizar */
   justify-content: center;  /* Centraliza horizontalmente */
 }
