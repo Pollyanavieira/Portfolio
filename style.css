@@ -158,11 +158,11 @@ img {
 /* Foto do perfil */
 .profile-photo {
   border-radius: 10%;           /* Cantos arredondados em 10% */
-  max-width: 100%;              /* Responsiva, não ultrapassa o container */
-  height: auto;                 /* Ajusta a altura proporcionalmente */
-  object-fit: cover;            /* Ajusta imagem para cobrir espaço */
-  border: 6px solid transparent; /* Corrige o border que estava incompleto */
-  transition: var(--transition); /* Transição suave */
+  max-width: 100%;              /* Responsiva, não ultrapassa o container  */
+  height: auto;                 /* Ajusta a altura proporcionalmente  */
+  object-fit: cover;            /* Ajusta imagem para cobrir espaço  */
+  border: 6px solid transparent; /* Corrige o border que estava incompleto  */
+  transition: var(--transition); /* Transição suave  */
 }
 
 /* Texto introdutório */
