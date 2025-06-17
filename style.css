@@ -150,19 +150,19 @@ img {
 
 /* Container da imagem do Hero */
 .hero-img {
-  flex: 1 1 10%;            /* Ocupa 40% do espaço  */
-  display: flex;            /* Flex para centralizar  */
-  justify-content: center;  /* Centraliza horizontalmente  */
+  flex: 1 1 10%;            /* Ocupa 40% do espaço */
+  display: flex;            /* Flex para centralizar */
+  justify-content: center;  /* Centraliza horizontalmente */
 }
 
 /* Foto do perfil */
 .profile-photo {
-  border-radius: 10%;           /* Cantos arredondados em 10%  */
-  max-width: 100%;              /* Responsiva, não ultrapassa o container  */
-  height: auto;                 /* Ajusta a altura proporcionalmente  */
-  object-fit: cover;            /* Ajusta imagem para cobrir espaço  */
-  border: 6px solid transparent; /* Corrige o border que estava incompleto  */
-  transition: var(--transition); /* Transição suave  */
+  border-radius: 10%;           /* Cantos arredondados em 10% */
+  max-width: 100%;              /* Responsiva, não ultrapassa o container */
+  height: auto;                 /* Ajusta a altura proporcionalmente */
+  object-fit: cover;            /* Ajusta imagem para cobrir espaço */
+  border: 6px solid transparent; /* Corrige o border que estava incompleto */
+  transition: var(--transition); /* Transição suave */
 }
 
 /* Texto introdutório */
@@ -200,7 +200,7 @@ h1 {
 
 /* Hover nos ícones sociais */
 .social-icons a:hover {
-  color: #DAA520;         /* Cor dourada */
+  color: #DAA520;        /* Cor dourada */
 }
 
 /* Cabeçalhos das seções */
@@ -213,7 +213,7 @@ section h2 {
 /* Estilo para citações na seção "sobre" */
 .sobre-content .quote {
   font-style: italic;     /* Itálico para destaque */
-  color: #555;            /* Cinza médio */
+  color: #555;          /* Cinza médio */
   margin-top: 1rem;       /* Espaço acima */
 }
 
@@ -276,13 +276,13 @@ section h2 {
 
 /* Informações do projeto */
 .project-info {
-  padding: 1.5rem;           /* Espaçamento interno */
+  padding: 1.5rem;         /* Espaçamento interno */
 }
 
 /* Título do projeto */
 .project-info h3 {
   margin-bottom: 0.5rem;     /* Espaço abaixo */
-  color: #1c1c1e;            /* Cor escura */
+  color: #1c1c1e;          /* Cor escura */
 }
 
 /* Descrição do projeto */
@@ -301,7 +301,7 @@ section h2 {
 /* Tecnologias usadas no projeto */
 .tech-stack {
   font-size: 0.9rem;         /* Fonte menor */
-  color: #777;               /* Cinza médio */
+  color: #777;             /* Cinza médio */
 }
 
 /* Botão na seção contato com margem superior */
@@ -341,14 +341,14 @@ footer {
   text-align: center;        /* Centraliza o texto */
   padding: 2rem;             /* Espaçamento interno */
   font-size: 0.9rem;         /* Fonte pequena */
-  color: #666;               /* Cor cinza suave */
+  color: #666;             /* Cor cinza suave */
 }
 
 /* Animações para efeito Reveal (aparecer) */
 .reveal {
-  opacity: 0;                /* Invisível inicialmente */
+  opacity: 0;                   /* Invisível inicialmente */
   transform: translateY(40px);  /* Deslocado para baixo */
-  transition: all 0.6s ease; /* Transição suave */
+  transition: all 0.6s ease;    /* Transição suave */
 }
 
 /* Estado ativo da animação Reveal */
@@ -371,7 +371,7 @@ footer {
   }
 
   .logo-img {
-    height: 50px;             /* Reduz o tamanho do logo */
+    height: 50px;              /* Reduz o tamanho do logo */
   }
 
   .button, .button.outline {
@@ -412,7 +412,7 @@ footer {
   .nav-links {
     display: none;                   /* Esconde links na navbar */
     flex-direction: column;          /* Links em coluna */
-    background-color: #fff;          /* Fundo branco */
+    background-color: #fff;        /* Fundo branco */
     border-radius: 12px;             /* Cantos arredondados */
     font-size: 18px;                 /* Tamanho da fonte */
     position: absolute;              /* Posicionado em relação à navbar */
